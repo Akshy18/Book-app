@@ -69,7 +69,8 @@ Live demo: [🔗 View on Netlify](https://book-editor.netlify.app/)
 
 ## Installation
 
-1. Clone the repo:
    ```bash
-   git clone https://github.com/Akshy18/Book-app
-   cd YOUR_REPO
+    git clone https://github.com/Akshy18/Book-app.git
+    cd Book-app
+    npm install
+    npm run dev
