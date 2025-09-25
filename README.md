@@ -1,84 +1,75 @@
-# ⏱️ Timer App
+# Book CSV Editor
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5b022f9b-9a8e-4f1e-9e8a-5b0b0b5b0b0b/deploy-status)](https://roaring-lokum-5140e7.netlify.app/)
-![GitHub last commit](https://img.shields.io/github/last-commit/Akshy18/timer-app)
+A **React + Vite** application for uploading, editing, filtering, sorting, and downloading CSV files containing book data. It also supports generating large datasets of fake book records for testing.
 
-A feature-rich React timer application for creating and managing customizable timers with category organization, progress visualization, and history tracking.
+Live demo: [🔗 View on Netlify](https://book-editor.netlify.app/)
 
-🔗 **Live Demo**: [https://roaring-lokum-5140e7.netlify.app/](https://roaring-lokum-5140e7.netlify.app/)
+---
 
-## ✨ Features
+## Features
 
-- 🕒 **Create Timers**: Add timers with names, durations (up to 24 hours), and categories.
-- 📁 **Category Management**: Group timers in collapsible categories, with defaults ("Workout", "Study", "Break") and custom options.
-- ⚡ **Bulk Actions**: Start, pause, or reset all timers in a category via a dropdown menu.
-- 📊 **Progress Visualization**: Display progress bars and a "Focus Mode" for distraction-free timer viewing.
-- 🕰️ **Completion History**: Log completed timers with timestamps and deletion options.
-- 🗑️ **Delete Options**: Remove individual timers or entire categories.
-- 💾 **Data Persistence**: Store timers, categories, and history in localStorage.
+- Upload CSV files and parse them using [PapaParse](https://www.papaparse.com/)
+- Generate large datasets of fake books using [faker.js](https://github.com/faker-js/faker)
+- Search and filter by genre
+- Sort data by column
+- Inline editing of table cells
+- Pagination with adjustable rows per page
+- Reset edits and download edited CSV
+- Tracks edited rows for easy identification
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
+## How to Use
 
-- Node.js (v16 or higher)
-- npm (v8 or higher) or Yarn
+1. **Upload CSV**  
+   Click the **“Upload CSV”** button and select a CSV file containing book data.  
+   The table will populate with your CSV rows.
 
-### 🛠️ Technical Details
-- **Persistence**: Uses localStorage to save timers, categories, and history (5MB limit).
-- **State Management**: Employs useState for lightweight state handling.
-- **Styling**: Leverages Tailwind CSS for responsive, modern UI design.
-- **Timer Logic**: Implements countdowns with JavaScript’s setInterval.
+2. **Generate Fake Data**  
+   Click **“Generate 10k books”** to create a dataset of 10,000 fake book records instantly.
 
-## 📝 Development Assumptions
+3. **Search**  
+   Use the search bar to search by Title, Author, Genre, Published Year, or ISBN.
 
-### Timer Configuration
+4. **Filter by Genre**  
+   Use the genre dropdown to filter books by category.
 
-**1. Duration Management**: 
-- Implemented automatic conversion from seconds to minutes and hours for improved readability.
-- Set a maximum timer duration constraint of 24 hours.
+5. **Sort Columns**  
+   Click on a table column header to sort by that column.  
+   - First click → ascending  
+   - Second click → descending  
+   - Third click → remove sorting
 
-**2. Category System**: 
-- Pre-populated the app with default categories mentioned in the requirements (Workout, Study, Break).
-- Added functionality for users to create custom categories through the Add Timer form.
+6. **Edit Cells**  
+   Double-click on any table cell to edit its value.  
+   Press **Enter** or click outside the cell to save changes.
 
-### Timer Functionality
+7. **Track Edits**  
+   Edited rows are highlighted so you can easily see changes.
 
-**1. Timer List Management**: 
-- Added a delete functionality for both individual timers and entire categories.
-- Included a "Focus" mode that allows users to isolate and focus on a specific timer with enhanced visual feedback.
+8. **Reset All Edits**  
+   Click **“Reset All Edits”** to revert all changes to the original dataset.
 
-**2. Bulk Actions**: 
-- Implemented a dropdown selector for bulk actions rather than separate buttons to improve UI aesthetics.
-- The selector includes all required actions: Start All, Pause All, and Reset All.
+9. **Download Edited CSV**  
+   Click **“Download CSV”** to export your current table data to a CSV file.
 
-**3. History and Logs**: 
-- Added the ability to delete completed timer logs from history.
-- History entries capture timer name and completion time as specified.
+10. **Pagination**  
+    Use the pagination buttons at the bottom to navigate through the data.  
+    You can adjust rows per page with the dropdown.
 
-**4. Alert System**: 
-- Implemented halfway alerts that automatically close when the timer completes.
-- Alert notifications remain non-intrusive to avoid disrupting the user experience.
+---
 
-### Technical Implementation
+## Tech Stack
 
-**1. State Management**:
-- Used useState for state management as specified in requirements.
-- Could have implemented Redux for better state management, reduced prop drilling, and more maintainable code, but adhered to the requirement of minimal third-party dependencies.
+- **Frontend:** React, Vite, Tailwind CSS
+- **Libraries:** PapaParse, faker.js
+- **Deployment:** Netlify
 
-**2. Styling**: 
-- Utilized Tailwind CSS for efficient styling and consistent design language.
-- Focused on responsive design to ensure usability across different device sizes.
+---
 
-**3. Navigation**: 
-- Implemented the required Home and History screens.
-- Added smooth transitions between screens to enhance user experience.
+## Installation
 
-### Installation
-
-```bash
-git clone https://github.com/Akshy18/timer-app.git
-cd timer-app
-npm install
-npm run dev
-
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Akshy18/Book-app
+   cd YOUR_REPO
